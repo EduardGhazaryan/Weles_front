@@ -1,0 +1,10 @@
+{
+    "nav": { "about":"ABOUT US","industries":"INDUSTRIES","blogs":"BLOG","branches":"BRANCHES","contacts":"CONTACTS" },
+    "hero": [
+    {"title":"WELES GROUP","subtitle":"SWISS VISION - GLOBAL IMPACT"},
+    {"title":"SUSTAINABLE ENERGY","subtitle":"Clean solutions for modern business"},
+    {"title":"SOLAR ENERGY","subtitle":"Solar energy for a sustainable future"}
+    ],
+    "about": { "title":"About WELES","text":"Lorem ipsum is simply dummy text..." },
+    "form": { "firstName":"First Name","lastName":"Last Name","email":"Email Address","phone":"Phone","message":"Message","submit":"Submit Now" }
+    }
