@@ -25,27 +25,27 @@ export default function Navbar({ sections }) {
       </div>
       <ul className="flex gap-6" ref={navRef}>
         <li>
-          <button onClick={() => scrollToSection("about")}>
+          <button onClick={() => scrollToSection("about")} className="cursor-pointer hover:text-[var(--mainGreen)]">
             {t("nav.about")}
           </button>
         </li>
         <li>
-          <button onClick={() => scrollToSection("industries")}>
+          <button onClick={() => scrollToSection("industries")} className="cursor-pointer hover:text-[var(--mainGreen)]">
             {t("nav.industries")}
           </button>
         </li>
         <li>
-          <button onClick={() => scrollToSection("blogs")}>
+          <button onClick={() => scrollToSection("blogs")} className="cursor-pointer hover:text-[var(--mainGreen)]">
             {t("nav.blogs")}
           </button>
         </li>
         <li>
-          <button onClick={() => scrollToSection("branches")}>
+          <button onClick={() => scrollToSection("branches")} className="cursor-pointer hover:text-[var(--mainGreen)]">
             {t("nav.branches")}
           </button>
         </li>
         <li>
-          <button onClick={() => scrollToSection("contacts")}>
+          <button onClick={() => scrollToSection("contacts")} className="cursor-pointer hover:text-[var(--mainGreen)]">
             {t("nav.contacts")}
           </button>
         </li>
