@@ -8,17 +8,17 @@ export default function HeroCarousel() {
   const [idx, setIdx] = useState(0);
   const intervalRef = useRef(null);
 
-  const startAutoSlide = () => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setIdx((i) => (i + 1) % items.length);
-    }, 4000);
-  };
+  // const startAutoSlide = () => {
+  //   clearInterval(intervalRef.current);
+  //   intervalRef.current = setInterval(() => {
+  //     setIdx((i) => (i + 1) % items.length);
+  //   }, 4000);
+  // };
 
-  useEffect(() => {
-    startAutoSlide();
-    return () => clearInterval(intervalRef.current);
-  }, [items.length]);
+  // useEffect(() => {
+  //   startAutoSlide();
+  //   return () => clearInterval(intervalRef.current);
+  // }, [items.length]);
 
   const handleClick = (type) => {
     clearInterval(intervalRef.current);
@@ -31,16 +31,17 @@ export default function HeroCarousel() {
       }
     });
 
-    startAutoSlide();
+    // startAutoSlide();
   };
 
   return (
     <section
-      className="relative h-[720px] hero-wave overflow-hidden bg-green-200 bg-no-repeat bg-cover bg-center"
-      style={{ backgroundImage: `url(images/wgoc3.png)` }}
+      className="relative xl:h-[720px] md:h-[600px] h-[400px]  "
     >
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-        <div className="container flex justify-between gap-[150px]">
+      <div  className="absolute z-10 xl:h-[720px] md:h-[600px] h-[400px] hero-wave overflow-hidden bg-green-200 bg-no-repeat bg-cover bg-center top-0 -left-10 xl:w-[104%] md:w-[106%] sm:w-[109%] w-[118%] "
+      style={{ backgroundImage: `url(images/wgoc3.png)` }}></div>
+      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white sm:p-6 ">
+        <div className="container flex justify-between xl:gap-[150px]">
           <button onClick={() => handleClick("next")}>
             <img
               src="icons/left_circle.svg"
@@ -50,11 +51,11 @@ export default function HeroCarousel() {
             />
           </button>
 
-          <div>
-            <h1 className="text-6xl font-bold tracking-wider drop-shadow-lg">
+          <div className="md:max-w-[450px] max-w-[200px]">
+            <h1 className="xl:text-6xl md:text-4xl text-2xl font-bold tracking-wider drop-shadow-lg">
               {items[idx].title}
             </h1>
-            <p className="mt-4 text-xl">{items[idx].subtitle}</p>
+            <p className="mt-4 md:text-xl text-md">{items[idx].subtitle}</p>
           </div>
 
           <button onClick={() => handleClick("next")}>

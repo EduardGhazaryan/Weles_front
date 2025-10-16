@@ -29,27 +29,33 @@ export default function Home() {
   };
   return (
     <main>
+      <header className="overflow-x-hidden">
        <Header/>
        <Navbar sections={sections}/>
       <HeroCarousel />
+      </header>
      <section className="section" ref={aboutRef}>
         <About />
       </section>
       <section className="section bg-[#f7f7f7]" ref={industriesRef}>
         <Industries />
       </section>
-      <Statistics/>
-      <Feautured/>
-      <section className="section" ref={blogsRef}>
+      {/* <Statistics/> */}
+      {/* <Feautured/> */}
+      {/* <section className="section" ref={blogsRef}>
         <BlogCarousel />
-      </section>
-      <section className="section bg-white" ref={branchesRef}>
+      </section> */}
+      {/* <section className="section bg-white" ref={branchesRef}>
         <Branches />
-      </section>
-      <section className="section" ref={contactsRef}>
+      </section> */}
+      {/* <section className="section" ref={contactsRef}>
         <ContactForm />
-      </section>
+      </section> */}
+      
+      <footer className="overflow-x-hidden">
+
       <Footer sections={sections}/>
+      </footer>
     </main>
   );
 }

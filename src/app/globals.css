@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
 
 @font-face {
   font-family: "Montserrat";
@@ -24,25 +24,87 @@ body {
 .section {
   padding-top: 4rem;
   padding-bottom: 4rem;
+
+  @media (max-width: 1024px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    
+  }
 }
 .hero-wave {
-  border-bottom-left-radius: 50% 8%;
-  border-bottom-right-radius: 50% 8%;
+  border-bottom-left-radius: 50% 13%;
+  border-bottom-right-radius: 50% 13%;
+}
+.footer-wave {
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+}
+.footer-second-wave {
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
 }
 .card-shadow {
   box-shadow: 0 8px 20px rgba(2, 6, 23, 0.08);
 }
 
+@media (max-width: 600px) {
+  .footer-second-wave {
+    width: 114%;
+    top: 113px;
+    left: -54px;
+    background-color: var(--darkGreen);
+  }
+
+  .footer-wave{
+    width: 130%;
+    left: -107px;
+  }
+  
+}
+@media (max-width: 500px) {
+  .footer-second-wave {
+    width: 114%;
+    top: 113px;
+    left: -42px;
+    background-color: var(--darkGreen);
+  }
+
+  .footer-wave{
+    width: 130%;
+    left: -82px;
+  }
+  
+}
+@media (max-width: 370px) {
+  .footer-second-wave {
+    width: 125%;
+    top: 115px;
+    left: -47px;
+
+    background-color: var(--darkGreen);
+  }
+
+  .footer-wave{
+    width: 140%;
+    left: -75px;
+  }
+  
+}
+
 .container{
   max-width: 1280px;
   margin: 0 auto;
+  padding: 14px;
 }
+
+
 
 :root{
   --iconGreen : invert(71%) sepia(58%) saturate(3946%) hue-rotate(104deg) brightness(102%) contrast(101%);
   --iconWhite : invert(100%) sepia(100%) saturate(0%) hue-rotate(282deg) brightness(107%) contrast(101%);
 
   --mainGreen : #008e46;
+  --darkGreen : #006432;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);

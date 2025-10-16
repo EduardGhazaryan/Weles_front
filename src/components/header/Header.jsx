@@ -25,13 +25,13 @@ const Header = () => {
     },
   ];
   return (
-    <div className="bg-black text-white py-2 px-4 flex justify-between items-center">
+    <div className="bg-black text-white  flex justify-between items-center">
       <div className="container flex justify-between items-center">
-        <div>Top left small info</div>
+        <div className="sm:text-[14px] text-[12px]">Top left small info</div>
         <div className="flex gap-4">
           {
         images.map((it, i) => (
-            <Link href={it.link} key={i} target="_blank"> <img src={it.src} alt="" className="w-6 h-6 " style={{filter: "var(--iconGreen)"}}/></Link>
+            <Link href={it.link} key={i} target="_blank"> <img src={it.src} alt="" className="sm:w-6 sm:h-6 w-4 h-4 " style={{filter: "var(--iconGreen)"}}/></Link>
         ))
     }
         </div>

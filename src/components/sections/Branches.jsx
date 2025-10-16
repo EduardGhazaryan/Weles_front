@@ -34,20 +34,22 @@ export default function Branches() {
     const globe = globeRef.current;
 
     // 1️⃣ Disable all interactions
-    const controls = globe.controls();
-    controls.enableZoom = false;
-    controls.enablePan = false;
-    controls.enableRotate = false;
+    // const controls = globe.controls();
+    // controls.enableZoom = false;
+    // controls.enablePan = false;
+    // controls.enableRotate = false;
 
-    // 2️⃣ Apply a clipping plane to cut the bottom half
-    const plane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 0); // cut below equator
-    globe.globeMaterial().clippingPlanes = [plane];
-    globe.globeMaterial().clipShadows = true;
-    globe.globeMaterial().needsUpdate = true;
+    // // 2️⃣ Apply a clipping plane to cut the bottom half
+    // const plane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 0); // cut below equator
+    // globe.globeMaterial().clippingPlanes = [plane];
+    // globe.globeMaterial().clipShadows = true;
+    // globe.globeMaterial().needsUpdate = true;
 
     // 3️⃣ Set fixed camera to top view
-    globe.pointOfView({ lat: 90, lng: 0, altitude: 2 }, 0);
-  }, []);
+    console.log("------------------")
+    globeRef.current.pointOfView({ lat: 40.0691, lng: 45.0382, altitude: 1.5 },
+        1200);
+  }, [globeRef.current]);
 
   return (
     <div id="branches" className="container mx-auto text-center">
@@ -67,18 +69,19 @@ export default function Branches() {
       </div>
 
      
-      <div className="relative mx-auto w-[700px] h-[700px]">
+      <div className="relative mx-auto w-[700px] h-[700px] ">
+        <div className="absolute w-full h-full top-0 left-0 bg-[#ffffff29] z-50"></div>
         <Globe
           ref={globeRef}
-          globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+          globeImageUrl="images/globe.jpg"
           bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
           backgroundColor="rgba(0,0,0,0)"
           width={700}
           height={700}
         />
-
+        <div className="absolute w-full h-[50%] bottom-0 left-0 bg-[#fff] z-50"></div>
    
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+        {/* <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none" /> */}
       </div>
     </div>
   );

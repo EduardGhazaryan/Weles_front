@@ -35,31 +35,16 @@ export default function Footer({ sections }) {
     },
   ];
   return (
-    <section className="relative z-20">
-      {/* --- Top Half Circle SVG --- */}
-      <div className="absolute top-0 left-0 w-full z-0 bg-green-800 rounded-t-[100%] h-[212px]"></div>
-      <div className="absolute top-0 left-0 w-full z-10"></div>
-      <div className="relative w-full">
-        <svg
-          className="w-full"
-          viewBox="20 20 1840 120"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient id="footerGradient" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="#00A651" />
-              <stop offset="100%" stopColor="#013220" />
-            </linearGradient>
-          </defs>
+    <section className="relative z-20 overflow-x-hidden overflow-y-visible">
+      
+      {/* <div className="relative lg:top-[110px] top-[111px]  h-[120px] z-10 bg-[var(--darkGreen)] footer-second-wave   lg:left-[7px] sm:-left-[8px] left-[-14px] xl:w-[98%] lg:w-[100%] sm:w-[100%] w-[104%]  "></div>
+      <div className="relative bottom-[100%]  h-[130px] z-10 bg-black footer-wave  -left-15 xl:w-[107%] md:w-[112%] sm:w-[114%] w-[118%] "></div> */}
 
-          <path d="M0,150 C0,00 1810,0 1900,150 Z" fill="#000" />
-        </svg>
-      </div>
+      <img src="images/footer_vector.png" alt="" className="w-full md:h-[65px] h-[45px]" />
 
-      {/* --- Footer Content --- */}
       <footer className="bg-[#000] text-white relative z-20">
-        <div className="container mx-auto py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col gap-[30px]">
+        <div className="container mx-auto flex justify-between flex-wrap gap-x-[10px] gap-y-[30px] " style={{padding: "12px 30px"}}>
+          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
             <h4 className="font-semibold text-[22px]">Navigation</h4>
             <ul className="text-sm space-y-2 flex flex-col gap-[10px]">
               <li>
@@ -105,10 +90,10 @@ export default function Footer({ sections }) {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-[30px]">
+          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
             <h4 className="font-semibold text-[22px]">Contact Us</h4>
             <div className="flex flex-col gap-[10px]">
-            <div className="flex gap-2">
+            <div className="flex gap-2 sm:justify-start justify-center">
               <img
                 src="icons/location.svg"
                 alt=""
@@ -117,7 +102,7 @@ export default function Footer({ sections }) {
               />
               <span>Prospekt 52/74, Liberec, 180 00</span>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 sm:justify-start justify-center">
               <img
                 src="icons/phone.svg"
                 alt=""
@@ -126,7 +111,7 @@ export default function Footer({ sections }) {
               />
               <span>+420 000 000 000</span>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 sm:justify-start justify-center">
               <img
                 src="icons/mail.svg"
                 alt=""
@@ -138,7 +123,7 @@ export default function Footer({ sections }) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[30px] items-start">
+          <div className="flex flex-col gap-[30px]  w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
             <h4 className="font-semibold text-[22px]">
               Sign Up for Newsletter
             </h4>
@@ -151,7 +136,7 @@ export default function Footer({ sections }) {
             </button>
           </div>
 
-          <div className="flex flex-col gap-[30px]">
+          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
             <h4 className="font-semibold  text-[22px]">Follow Us</h4>
             <div className="flex gap-4 flex-col">
           {
