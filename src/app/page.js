@@ -40,19 +40,19 @@ export default function Home() {
       <section className="section bg-[#f7f7f7]" ref={industriesRef}>
         <Industries />
       </section>
-      {/* <Statistics/> */}
-      {/* <Feautured/> */}
-      {/* <section className="section" ref={blogsRef}>
+      <Statistics/>
+      <Feautured/>
+      <section className="section" ref={blogsRef}>
         <BlogCarousel />
-      </section> */}
-      {/* <section className="section bg-white" ref={branchesRef}>
+      </section>
+      <section className="section bg-white" ref={branchesRef}>
         <Branches />
-      </section> */}
-      {/* <section className="section" ref={contactsRef}>
+      </section>
+      <section className="section" ref={contactsRef}>
         <ContactForm />
-      </section> */}
+      </section>
       
-      <footer className="overflow-x-hidden">
+      <footer className="overflow-x-hidden pt-[100px]">
 
       <Footer sections={sections}/>
       </footer>

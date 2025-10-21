@@ -41,19 +41,20 @@ export function CarouselSlide() {
       }}
       className="w-full"
     >
-      <CarouselContent className="p-5">
+      <CarouselContent className="lg:p-5 py-2">
         {carouselItems.map((item, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
             <div className="">
               <Card className="p-0 border-none shadow-[0px_0px_12px_#d1d1d1]">
-                <CardContent className="flex p-0 h-[400px] flex-col border-none overflow-hidden">
+                <CardContent className="flex p-0 lg:h-[400px] min-h-[400px] flex-col border-none overflow-hidden relative">
+                  <div className="absolute top-4 left-4 bg-[var(--mainGreen)] min-w-[100px] rounded text-white">{item?.date?.getDate()}</div>
                   <img
                     src={item.img}
                     alt=""
                     className="w-full h-[200px] rounded-2xl object-cover"
                   />
                   <div className="flex flex-col gap-2 p-4 overflow-hidden">
-                    <span className="font-semibold text-[26px]">{item.title}</span>
+                    <span className="font-semibold sm:text-[26px] text-[20px]">{item.title}</span>
                     <span className="text-left text-sm text-gray-600 line-clamp-6">
                       {item.description}
                     </span>

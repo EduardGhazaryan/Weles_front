@@ -43,10 +43,10 @@ export default function Feautured() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
         <div className="container flex justify-center gap-[150px]">
           <div>
-            <h1 className="text-6xl font-bold tracking-wider drop-shadow-lg">
+            <h1 className="sm:text-6xl text-2xl font-bold tracking-wider drop-shadow-lg">
               {items[idx].title}
             </h1>
-            <p className="mt-4 text-xl">{items[idx].subtitle}</p>
+            <p className="mt-4 sm:text-xl text-[14px]">{items[idx].subtitle}</p>
           </div>
         </div>
 

@@ -2,8 +2,10 @@
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { setLocale } from "../../store/slices/langSlice";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { setLocale } from "@/features/lang/langSlice";
 
 
 export default function Navbar({ sections }) {
@@ -13,6 +15,7 @@ export default function Navbar({ sections }) {
   const { locale } = useSelector((state) => state.lang);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
+  const router = useRouter()
 
   let menuItems = [
     {
@@ -54,7 +57,7 @@ export default function Navbar({ sections }) {
   return (
     <nav className="flex items-center justify-between py-4 container relative">
       <div>
-        <img src="images/walesGreen.png" alt="" className="w-[200px]" />
+        <img src="images/walesGreen.png" alt="" className="w-[200px] cursor-pointer" onClick={() => router.push("/")}/>
       </div>
       <ul className="md:flex hidden lg:gap-6 gap-2 " ref={navRef}>
         {

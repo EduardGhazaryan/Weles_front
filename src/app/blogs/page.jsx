@@ -1,0 +1,68 @@
+'use client'
+import { useState } from "react";
+// import { FiFilter } from "react-icons/fi";
+import BlogsFilter from "@/components/blogs/BlogsFilter";
+import BlogsList from "@/components/blogs/BlogsList";
+import Header from "@/components/header/Header";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+
+export default function BlogsPage() {
+  const [showFilter, setShowFilter] = useState(false);
+
+  return (
+    <div className="overflow-x-hidden relative">
+      <Header />
+      <Navbar />
+
+      <section>
+        <h1 className="text-[50px] font-bold bg-black text-white text-center p-[50px]">
+          Our Blog
+        </h1>
+
+        {/* Filter button for mobile */}
+        <div className="md:hidden flex justify-end px-6 py-4">
+          <button
+            onClick={() => setShowFilter(true)}
+            className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full text-gray-700 hover:bg-gray-100"
+          >
+            {/* <FiFilter size={20} /> */}
+            Filter
+          </button>
+        </div>
+
+        <div className="container flex">
+          {/* Blog list */}
+          <div className="md:w-[75%] w-[100%] min-h-[500px] py-[100px]">
+            <BlogsList />
+          </div>
+
+          {/* Sidebar filter (desktop only) */}
+          <div className="md:w-[25%] md:block hidden min-h-[500px] py-[100px]">
+            <BlogsFilter />
+          </div>
+        </div>
+      </section>
+
+      {/* Side filter for mobile */}
+      {showFilter && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex justify-end">
+          <div className="bg-white w-[80%] sm:w-[400px] h-full p-6 overflow-y-auto shadow-lg">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-lg font-semibold">Filters</h2>
+              <button
+                onClick={() => setShowFilter(false)}
+                className="text-gray-600 text-2xl leading-none"
+              >
+                &times;
+              </button>
+            </div>
+            <BlogsFilter />
+          </div>
+        </div>
+      )}
+
+      <Footer />
+    </div>
+  );
+}

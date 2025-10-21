@@ -20,7 +20,7 @@ export default function ContactForm() {
 
   return (
     <div id="contacts" className="container mx-auto text-center px-[150px] flex flex-col gap-[30px]">
-      <h3 className="text-[50px] font-medium mb-6">Get in Touch</h3>
+      <h3 className="text-[50px] font-bold mb-6">Get in Touch</h3>
       <Formik
         initialValues={initial}
         validationSchema={schema}
@@ -37,8 +37,8 @@ export default function ContactForm() {
         }}
       >
         {({ isSubmitting, errors, touched }) => (
-          <Form className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col gap-2 items-start">
+          <Form className="grid md:grid-cols-2 grid-cols-1 gap-6">
+            <div className="flex flex-col gap-2 items-start md:col-span-1 col-span-2">
               <Field
                 name="firstName"
                 placeholder={t("form.firstName")}
@@ -53,7 +53,7 @@ export default function ContactForm() {
               />
             </div>
 
-            <div className="flex flex-col gap-2 items-start">
+            <div className="flex flex-col gap-2 items-start md:col-span-1 col-span-2">
               <Field
                 name="phone"
                 placeholder={t("form.phone")}
@@ -68,7 +68,7 @@ export default function ContactForm() {
               />
             </div>
 
-            <div className="flex flex-col justify-between h-full gap-6 row-span-2">
+            <div className="flex flex-col justify-between h-full gap-6 md:row-span-2 md:col-span-1 col-span-2">
               <div className="flex flex-col gap-6 h-full justify-between ">
                 <div className="flex flex-col gap-2 items-start">
                   <Field
@@ -103,7 +103,7 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="row-span-2 flex flex-col justify-between items-start">
+            <div className="md:row-span-2 flex flex-col justify-between items-start md:col-span-1 col-span-2">
               <Field
                 as="textarea"
                 name="message"
