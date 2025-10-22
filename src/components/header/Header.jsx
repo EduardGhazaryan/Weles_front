@@ -4,23 +4,23 @@ import React from "react";
 const Header = () => {
   let images = [
     {
-      src: "icons/twitter.svg",
+      src: "/icons/twitter.svg",
       link: "https://x.com/",
     },
     {
-      src: "icons/facebook.svg",
+      src: "/icons/facebook.svg",
       link: "https://www.facebook.com/",
     },
     {
-      src: "icons/instagram.svg",
+      src: "/icons/instagram.svg",
       link: "https://www.instagram.com/",
     },
     {
-      src: "icons/youtube.svg",
+      src: "/icons/youtube.svg",
       link: "https://www.youtube.com/",
     },
     {
-      src: "icons/google_plus.svg",
+      src: "/icons/google_plus.svg",
       link: "https://www.youtube.com/",
     },
   ];

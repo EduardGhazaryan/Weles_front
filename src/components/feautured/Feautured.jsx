@@ -39,6 +39,7 @@ export default function Feautured() {
     <section
       className="relative h-[420px]  overflow-hidden bg-green-200 bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(images/wgoc3.png)` }}
+      id="feautured"
     >
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
         <div className="container flex justify-center gap-[150px]">

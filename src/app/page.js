@@ -8,54 +8,36 @@ import Branches from "../components/sections/Branches";
 import ContactForm from "../components/sections/ContactForm";
 import Footer from "../components/layout/Footer";
 import Header from "@/components/header/Header";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Statistics from "@/components/statistics/Statistics";
 import Feautured from "@/components/feautured/Feautured";
+import { useDispatch } from "react-redux";
+import { setSections } from "@/features/global/globalSlice";
 
 
 export default function Home() {
-  const aboutRef = useRef(null);
-  const industriesRef = useRef(null);
-  const blogsRef = useRef(null);
-  const branchesRef = useRef(null);
-  const contactsRef = useRef(null);
-
-  const sections = {
-    about: aboutRef,
-    industries: industriesRef,
-    blogs: blogsRef,
-    branches: branchesRef,
-    contacts: contactsRef,
-  };
   return (
     <main>
       <header className="overflow-x-hidden">
-       <Header/>
-       <Navbar sections={sections}/>
       <HeroCarousel />
       </header>
-     <section className="section" ref={aboutRef}>
+     <section className="section" id="about">
         <About />
       </section>
-      <section className="section bg-[#f7f7f7]" ref={industriesRef}>
+      <section className="section bg-[#f7f7f7]" id="industries">
         <Industries />
       </section>
       <Statistics/>
       <Feautured/>
-      <section className="section" ref={blogsRef}>
+      <section className="section" id="blogs">
         <BlogCarousel />
       </section>
-      <section className="section bg-white" ref={branchesRef}>
+      <section className="section bg-white" id="branches">
         <Branches />
       </section>
-      <section className="section" ref={contactsRef}>
+      <section className="section" id="contact">
         <ContactForm />
       </section>
-      
-      <footer className="overflow-x-hidden pt-[100px]">
-
-      <Footer sections={sections}/>
-      </footer>
     </main>
   );
 }

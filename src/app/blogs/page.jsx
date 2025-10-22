@@ -12,9 +12,6 @@ export default function BlogsPage() {
 
   return (
     <div className="overflow-x-hidden relative">
-      <Header />
-      <Navbar />
-
       <section>
         <h1 className="text-[50px] font-bold bg-black text-white text-center p-[50px]">
           Our Blog
@@ -61,8 +58,6 @@ export default function BlogsPage() {
           </div>
         </div>
       )}
-
-      <Footer />
     </div>
   );
 }

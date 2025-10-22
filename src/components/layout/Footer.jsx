@@ -2,46 +2,48 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
-export default function Footer({ sections }) {
+export default function Footer() {
   const { t, i18n } = useTranslation();
   function scrollToSection(section) {
-    sections[section]?.current?.scrollIntoView({ behavior: "smooth" });
+    if (path === "/") {
+      const element = document.getElementById(section);
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${section}`);
+    }
   }
+  
 
   let images = [
     {
-      src: "icons/twitter.svg",
+      src: "/icons/twitter.svg",
       link: "https://x.com/",
       title : "Twitter",
     },
     {
-      src: "icons/facebook.svg",
+      src: "/icons/facebook.svg",
       link: "https://www.facebook.com/",
       title : "Facebook",
     },
     {
-      src: "icons/instagram.svg",
+      src: "/icons/instagram.svg",
       link: "https://www.instagram.com/",
       title : "Instagram",
     },
     {
-      src: "icons/youtube.svg",
+      src: "/icons/youtube.svg",
       link: "https://www.youtube.com/",
       title : "Youtube",
     },
     {
-      src: "icons/google_plus.svg",
+      src: "/icons/google_plus.svg",
       link: "https://www.youtube.com/",
       title : "Google+",
     },
   ];
   return (
     <section className="relative z-20 overflow-x-hidden overflow-y-visible">
-      
-      {/* <div className="relative lg:top-[110px] top-[111px]  h-[120px] z-10 bg-[var(--darkGreen)] footer-second-wave   lg:left-[7px] sm:-left-[8px] left-[-14px] xl:w-[98%] lg:w-[100%] sm:w-[100%] w-[104%]  "></div>
-      <div className="relative bottom-[100%]  h-[130px] z-10 bg-black footer-wave  -left-15 xl:w-[107%] md:w-[112%] sm:w-[114%] w-[118%] "></div> */}
-
-      <img src="images/footer_vector.png" alt="" className="w-full md:h-[65px] h-[45px]" />
+      <img src="/images/footer_vector.png" alt="" className="w-full md:h-[65px] h-[45px]" />
 
       <footer className="bg-[#000] text-white relative z-20">
         <div className="container mx-auto flex justify-between flex-wrap gap-x-[10px] gap-y-[30px] " style={{padding: "12px 30px"}}>
@@ -96,7 +98,7 @@ export default function Footer({ sections }) {
             <div className="flex flex-col gap-[10px]">
             <div className="flex gap-2 sm:justify-start justify-center">
               <img
-                src="icons/location.svg"
+                src="/icons/location.svg"
                 alt=""
                 className="w-[20px] mb-3"
                 style={{ filter: "var(--iconGreen)" }}
@@ -105,7 +107,7 @@ export default function Footer({ sections }) {
             </div>
             <div className="flex gap-2 sm:justify-start justify-center">
               <img
-                src="icons/phone.svg"
+                src="/icons/phone.svg"
                 alt=""
                 className="w-[20px] mb-3"
                 style={{ filter: "var(--iconWhite)" }}
@@ -114,7 +116,7 @@ export default function Footer({ sections }) {
             </div>
             <div className="flex gap-2 sm:justify-start justify-center">
               <img
-                src="icons/mail.svg"
+                src="/icons/mail.svg"
                 alt=""
                 className="w-[20px] mb-3"
                 style={{ filter: "var(--iconWhite)" }}

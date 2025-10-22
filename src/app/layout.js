@@ -1,6 +1,9 @@
 import "./globals.css";
 import Providers from "../components/providers/Providers";
 import Head from "next/head";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/header/Header";
+import Navbar from "@/components/layout/Navbar";
 
 export const metadata = {
   title: "WELES GROUP - Swiss Vision, Global Impact",
@@ -25,7 +28,16 @@ export default function RootLayout({ children }) {
         <meta property="og:type" content="website" />
       </Head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <nav className="overflow-x-hidden">
+            <Header/>
+            <Navbar/>
+          </nav>
+          {children}
+          <footer className="overflow-x-hidden pt-[100px]">
+            <Footer />
+          </footer>
+        </Providers>
       </body>
     </html>
   );

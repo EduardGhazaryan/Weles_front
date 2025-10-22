@@ -8,7 +8,7 @@ export default function BlogItem({ blog }) {
         <img
           src={blog.image}
           alt={blog.title}
-          className="w-full rounded-lg mb-4"
+          className="w-full rounded-lg mb-4 md:h-[400px] h-[300px] object-cover"
         />
       )}
 
@@ -25,7 +25,7 @@ export default function BlogItem({ blog }) {
       <h2 className="text-2xl font-bold mb-3">{blog.title}</h2>
 
 
-      <p className="text-gray-600 mb-4">{blog.description}</p>
+      <p className="text-gray-600 mb-4 line-clamp-7">{blog?.description}</p>
 
    
       <Link

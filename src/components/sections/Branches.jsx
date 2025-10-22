@@ -8,6 +8,9 @@ const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 export default function Branches() {
   const globeRef = useRef(null);
   const [globeSize, setGlobeSize] = useState({ width: 1000, height: 1000 });
+  const [currentCountry, setCurrentCountry] = useState("Armenia");
+
+const [markers, setMarkers] = useState([]);
 
   const countries = [
     { name: "Switzerland", lat: 36.8182, lng: 8.2275 },
@@ -19,6 +22,17 @@ export default function Branches() {
     { name: "Czech Republic", lat: 39.8175, lng: 15.473 },
   ];
 
+
+  const countriesCorrect = [
+    { name: "Switzerland", lat: 46.8182, lng: 8.2275 },
+    { name: "Austria", lat: 47.5162, lng: 14.5501 },
+    { name: "Georgia", lat: 42.3154, lng: 43.3569 },
+    { name: "Armenia", lat: 40.0691, lng: 45.0382 },
+    { name: "Latvia", lat: 56.8796, lng: 24.6032 },
+    { name: "Germany", lat: 51.1657, lng: 10.4515 },
+    { name: "Czech Republic", lat: 49.8175, lng: 15.4730 },
+  ];
+  
 
   const countryOffsets = {
     Switzerland: { sm: { lat: -2, lng: 4 }, md: { lat: -1, lng: 2 }, lg: { lat: 0, lng: 0 } },
@@ -68,8 +82,10 @@ export default function Branches() {
   const handleCountryClick = (country) => {
     const g = globeRef.current;
     if (!g) return;
-
     const { lat, lng } = getAdjustedCoords(country);
+    setCurrentCountry(country.name);
+    let correct = countriesCorrect.find((c) => c.name === country.name);
+    setMarkers([{ lat : correct.lat, lng: correct.lng, size: 1, color: 'yellow' }]);
     const currentPOV = typeof g.pointOfView === "function" ? g.pointOfView() : null;
     const altitude = currentPOV?.altitude ?? 0.35;
 
@@ -87,8 +103,10 @@ export default function Branches() {
       if (initialized) return;
       initialized = true;
 
-      const initialPOV = { lat: 27.0002, lng: 15.265, altitude: 1.75 };
-      g.pointOfView(initialPOV, 0);
+      const armenia = countries.find((c) => c.name === "Armenia");
+      const { lat, lng } = getAdjustedCoords(armenia);
+  
+      g.pointOfView({ lat, lng, altitude: 1.75 }, 0);
 
       const controls = g.controls();
       if (controls) {
@@ -122,13 +140,14 @@ export default function Branches() {
 
 
         <div className="flex sm:gap-6 gap-2 justify-center flex-wrap mb-8 sm:min-h-[100px] min-h-[120px]">
-          {countries.map((c) => (
+          {countries.map((country) => (
             <button
-              key={c.name}
-              onClick={() => handleCountryClick(c)}
-              className="px-3 py-1 text-gray-700 hover:text-green-600 font-medium transition"
+              key={country.name}
+              onClick={() => handleCountryClick(country)}
+              className={`px-3 py-1 text-gray-700 hover:text-green-600 transition cursor-pointer ${
+                currentCountry === country.name ? "text-green-600 text-[22px] font-extrabold" : "font-medium "}`}
             >
-              {c.name}
+              {country.name}
             </button>
           ))}
         </div>
@@ -151,6 +170,13 @@ export default function Branches() {
             backgroundColor="rgba(0,0,0,0)"
             width={globeSize.width}
             height={globeSize.height}
+
+            pointsData={markers}  
+            pointLat="lat"
+            pointLng="lng"
+            pointAltitude={0.01}   
+            pointColor="color"
+            pointRadius={0.5}  
           />
         </div>
       </div>
