@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function BlogItem({ blog }) {
+  const {t} = useTranslation()
   return (
     <div className="mb-12 border-b border-gray-200 pb-8">
 
@@ -32,7 +34,7 @@ export default function BlogItem({ blog }) {
         href={`/blogs/${blog.id}`}
         className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 inline-block"
       >
-        Read More
+        {t("buttons.readMore")}
       </Link>
     </div>
   );

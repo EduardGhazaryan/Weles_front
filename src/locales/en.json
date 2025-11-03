@@ -1,10 +1,64 @@
 {
-    "nav": { "about":"ABOUT US","industries":"INDUSTRIES","blogs":"BLOG","branches":"BRANCHES","contacts":"CONTACTS" },
-    "hero": [
-    {"title":"WELES GROUP","subtitle":"SWISS VISION - GLOBAL IMPACT"},
-    {"title":"SUSTAINABLE ENERGY","subtitle":"Clean solutions for modern business"},
-    {"title":"SOLAR ENERGY","subtitle":"Solar energy for a sustainable future"}
-    ],
-    "about": { "title":"About WELES","text":"Lorem ipsum is simply dummy text..." },
-    "form": { "firstName":"First Name","lastName":"Last Name","email":"Email Address","phone":"Phone","message":"Message","submit":"Submit Now" }
+  "nav": {
+    "about": "ABOUT US",
+    "industries": "INDUSTRIES",
+    "blogs": "BLOG",
+    "branches": "BRANCHES",
+    "contacts": "CONTACTS"
+  },
+  "hero": [
+    { "title": "WELES GROUP", "subtitle": "SWISS VISION - GLOBAL IMPACT" },
+    {
+      "title": "SUSTAINABLE ENERGY",
+      "subtitle": "Clean solutions for modern business"
+    },
+    {
+      "title": "SOLAR ENERGY",
+      "subtitle": "Solar energy for a sustainable future"
     }
+  ],
+  "about": {
+    "title": "About WELES",
+    "text": "Lorem ipsum is simply dummy text..."
+  },
+  "form": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Submit Now"
+  },
+  "ourIndustries": "Our Industries",
+  "latestBlogs": "Latest Blogs",
+  "ourBranches": "Our Branches",
+  "getInTouch": "Get In Touch",
+  "countries": {
+    "Switzerland": "Switzerland",
+    "Austria": "Austria",
+    "Georgia": "Georgia",
+    "Armenia": "Armenia",
+    "Latvia": "Latvia",
+    "Germany": "Germany",
+    "Czech Republic": "Czech Republic"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "followUs": "Follow Us",
+    "SignUpFornewsLetter": "Sign Up For Newsletter"
+  },
+  "blogs": {
+    "ourBlogs": "Our Blogs",
+    "blogsPosts": "Blog Posts",
+    "backToBlocgs": "Back To Blogs"
+  },
+  "buttons": {
+    "seeMore": "See More",
+    "subscribeNow": "Subscribe Now",
+    "subscribe": "Subscribe",
+    "readMore": "Read More",
+    "goBack": "Go Back",
+    "next": "Next",
+    "previous": "Prev"
+  }
+}

@@ -5,10 +5,12 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import { allBlogs } from "@/utils/blogs";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function BlogDetails({ params }) {
   // ✅ Правильно: сначала “распаковываем” params
   const { id } = use(params);
+  const {t} = useTranslation()
 
   const blog = allBlogs.find((b) => b.id === parseInt(id));
   console.log({ allBlogs, id });
@@ -20,7 +22,7 @@ export default function BlogDetails({ params }) {
   return (
     <div className="overflow-x-hidden">
       <h1 className="text-[50px] font-bold bg-black text-white text-center p-[50px]">
-        Blog Post
+        {t("blogs.blogsPosts")}
       </h1>
 
       <div className="max-w-6xl mx-auto py-16 px-4 md:px-8">
@@ -49,7 +51,7 @@ export default function BlogDetails({ params }) {
             href="/blogs"
             className="bg-gray-100 px-6 py-2 rounded-full hover:bg-gray-200"
           >
-            ← Back to Blogs
+            ← {t("blogs.backToBlogs")}
           </a>
         </div>
       </div>

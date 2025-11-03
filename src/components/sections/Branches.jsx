@@ -2,11 +2,13 @@
 
 import dynamic from "next/dynamic";
 import { useRef, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
 export default function Branches() {
   const globeRef = useRef(null);
+  const {t} = useTranslation("")
   const [globeSize, setGlobeSize] = useState({ width: 1000, height: 1000 });
   const [currentCountry, setCurrentCountry] = useState("Armenia");
 
@@ -136,7 +138,7 @@ const [markers, setMarkers] = useState([]);
       </div>
 
       <div className="container mx-auto text-center relative">
-        <h3 className="font-bold text-[50px] text-black mb-6">Our Branches</h3>
+        <h3 className="font-bold sm:text-[50px] text-[30px] text-black mb-6">{t("ourBranches")}</h3>
 
 
         <div className="flex sm:gap-6 gap-2 justify-center flex-wrap mb-8 sm:min-h-[100px] min-h-[120px]">
@@ -147,7 +149,7 @@ const [markers, setMarkers] = useState([]);
               className={`px-3 py-1 text-gray-700 hover:text-green-600 transition cursor-pointer ${
                 currentCountry === country.name ? "text-green-600 text-[22px] font-extrabold" : "font-medium "}`}
             >
-              {country.name}
+              {t(`countries.${country.name}`)}
             </button>
           ))}
         </div>
@@ -171,12 +173,12 @@ const [markers, setMarkers] = useState([]);
             width={globeSize.width}
             height={globeSize.height}
 
-            pointsData={markers}  
-            pointLat="lat"
-            pointLng="lng"
-            pointAltitude={0.01}   
-            pointColor="color"
-            pointRadius={0.5}  
+            // pointsData={markers}  
+            // pointLat="lat"
+            // pointLng="lng"
+            // pointAltitude={0.01}   
+            // pointColor="color"
+            // pointRadius={0.5}  
           />
         </div>
       </div>

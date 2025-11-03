@@ -18,7 +18,6 @@ export default function Navbar() {
   const router = useRouter()
   const path = usePathname()
 
-  console.log(path);
 
  
 
@@ -112,7 +111,7 @@ export default function Navbar() {
         <img src="/icons/burger_menu.svg" alt=""  onClick={() => setIsOpenBurgerMenu(!isOpenBurgerMenu)} className={`cursor-pointer w-[30px] h-[30px] ${isOpenBurgerMenu ? "rotate-90" : ""} transition-all duration-200 ease-linear`} />
 
  
-            <div className={`absolute top-[100%] bg-white z-100  p-2 shadow-[0_7px_17px_#6b6b6b] sm:w-[300px] w-full transition-all duration-300 ease-linear ${isOpenBurgerMenu ? "sm:right-1 right-0" : "-right-full"}`}>
+            <div className={`absolute top-[100%] bg-white z-100  p-2 shadow-[0_7px_17px_#6b6b6b] sm:w-[300px] w-full transition-all duration-300 ease-linear ${isOpenBurgerMenu ? "sm:right-1 right-0 " : "hidden"}`}>
               <ul className="flex flex-col items-center p-4 lg:gap-6 gap-6 " ref={navRef}>
                 {
                   menuItems.map(item => (

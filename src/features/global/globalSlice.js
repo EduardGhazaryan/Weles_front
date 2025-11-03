@@ -1,7 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getHomePageDatasThunk } from "./globalApi";
 
 const initialState = {
-  sections : null
+  about : null,
+  contact : null,
+  contentSliders : null,
+  heroBanners : null,
+  social : null,
+  loading : false,
+  error : null
 };
 
 const globalSlice = createSlice({
@@ -11,6 +18,25 @@ const globalSlice = createSlice({
     setSections: (state, action) => {
       state.sections = action.payload;
     }
+  },
+  extraReducers: (builder) => {
+    builder
+    .addCase(getHomePageDatasThunk.pending, (state) => {
+      state.loading = true;
+    })
+    .addCase(getHomePageDatasThunk.fulfilled, (state, action) => {
+      state.loading = false;
+      const data = action.payload;
+      state.about = data.about;
+      state.contact = data.contact;
+      state.contentSliders = data.contentSliders;
+      state.heroBanners = data.heroBanners;
+      state.social = data.social;
+    })
+    .addCase(getHomePageDatasThunk.rejected, (state) => {
+      state.loading = false;
+      state.error = "Failed";
+    });
   },
 });
 

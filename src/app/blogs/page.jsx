@@ -6,15 +6,17 @@ import BlogsList from "@/components/blogs/BlogsList";
 import Header from "@/components/header/Header";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import { useTranslation } from "react-i18next";
 
 export default function BlogsPage() {
   const [showFilter, setShowFilter] = useState(false);
+  const {t} = useTranslation()
 
   return (
     <div className="overflow-x-hidden relative">
       <section>
         <h1 className="text-[50px] font-bold bg-black text-white text-center p-[50px]">
-          Our Blog
+          {t("ourBlogs")}
         </h1>
 
         {/* Filter button for mobile */}

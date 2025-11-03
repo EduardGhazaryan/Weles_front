@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       </Head>
       <body>
         <Providers>
-          <nav className="overflow-x-hidden">
+          <nav className="">
             <Header/>
             <Navbar/>
           </nav>

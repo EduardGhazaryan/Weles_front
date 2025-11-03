@@ -20,7 +20,7 @@ export default function ContactForm() {
 
   return (
     <div id="contacts" className="container mx-auto text-center px-[150px] flex flex-col gap-[30px]">
-      <h3 className="text-[50px] font-bold mb-6">Get in Touch</h3>
+      <h3 className="text-[50px] font-bold mb-6">{t("getInTouch")}</h3>
       <Formik
         initialValues={initial}
         validationSchema={schema}

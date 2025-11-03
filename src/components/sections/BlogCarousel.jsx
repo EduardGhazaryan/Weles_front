@@ -10,7 +10,7 @@ export default function BlogCarousel() {
 
   return (
     <div id="blogs" className="container mx-auto text-center ">
-      <h3 className="text-[50px] font-bold mb-8">Latest Blog</h3>
+      <h3 className="sm:text-[50px] text-[30px] font-bold mb-8">{t("latestBlogs")}</h3>
 
       <div className="w-full min-h-[300px] px-[50px]">
         <CarouselSlide />
@@ -21,7 +21,7 @@ export default function BlogCarousel() {
         className="bg-[var(--mainGreen)] text-white px-8 py-3 rounded-3xl hover:bg-green-700 transition-all cursor-pointer"
         onClick={() => router.push("/blogs")}
       >
-        {t("form.submit")}
+        {t("buttons.seeMore")}
       </button>
     </div>
   );

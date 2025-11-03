@@ -9,9 +9,9 @@ import am from '../../locales/am.json'
 i18n
 .use(initReactI18next)
 .init({
-resources: { en: { translation: en }, hy: { translation: am} },
-lng: 'en',
-fallbackLng: 'en',
+resources: { en: { translation: en }, am: { translation: am} },
+lng: 'am',
+fallbackLng: 'am',
 interpolation: { escapeValue: false }
 })
 

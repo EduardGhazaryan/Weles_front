@@ -1,21 +1,28 @@
 "use client";
-import Navbar from "../components/layout/Navbar";
 import HeroCarousel from "../components/hero/HeroCarousel";
 import About from "../components/sections/About";
 import Industries from "../components/sections/Industries";
 import BlogCarousel from "../components/sections/BlogCarousel";
 import Branches from "../components/sections/Branches";
 import ContactForm from "../components/sections/ContactForm";
-import Footer from "../components/layout/Footer";
-import Header from "@/components/header/Header";
-import { useEffect, useRef } from "react";
 import Statistics from "@/components/statistics/Statistics";
 import Feautured from "@/components/feautured/Feautured";
+import { useEffect } from "react";
+import { getHomePageDatas, getHomePageDatasThunk } from "@/features/global/globalApi";
 import { useDispatch } from "react-redux";
-import { setSections } from "@/features/global/globalSlice";
 
 
 export default function Home() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+
+ dispatch(getHomePageDatasThunk());
+      
+
+    
+
+  },[]);
+
   return (
     <main>
       <header className="overflow-x-hidden">

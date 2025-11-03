@@ -3,10 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import BlogItem from "./BlogItem";
 import { allBlogs } from "@/utils/blogs";
 import { setCurrentPage } from "@/features/blogs/blogsSlice";
+import { useTranslation } from "react-i18next";
 
 export default function BlogsList() {
   const dispatch = useDispatch();
   const { search, currentPage, itemsPerPage } = useSelector((state) => state.blogs);
+  const {t}= useTranslation()
 
 
   const filteredBlogs = allBlogs.filter((blog) =>
@@ -67,7 +69,7 @@ export default function BlogsList() {
             onClick={handlePrev}
             disabled={currentPage === 1}
           >
-            Prev
+            {t("buttons.previous")}
           </button>
 
           {getPageNumbers().map((page, index) =>
@@ -98,7 +100,7 @@ export default function BlogsList() {
             onClick={handleNext}
             disabled={currentPage === totalPages}
           >
-            Next
+            {t("buttons.next")}
           </button>
         </div>
       )}

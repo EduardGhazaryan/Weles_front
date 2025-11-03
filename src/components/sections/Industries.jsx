@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function Industries() {
+  const { t } = useTranslation();
   const items = [
     {
       title: "SOLAR ENERGY",
@@ -26,7 +29,7 @@ export default function Industries() {
       </div>
 
       <div className="relative z-10 container p-[15px] flex flex-col gap-[50px]">
-        <h3 className=" font-bold text-[50px] mb-8 text-black">Our Industries</h3>
+        <h3 className=" font-bold sm:text-[50px] text-[25px] mb-8 text-black">{t("ourIndustries")}</h3>
         <div className="flex flex-wrap lg:gap-x-10  gap-y-10 gap-x-0 justify-start">
           {items.map((it, i) => (
             <div key={i} className="lg:w-[45%] md:w-[45%] w-full  text-black font-medium">

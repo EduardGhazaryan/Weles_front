@@ -8,7 +8,7 @@ export default function BlogsFilter() {
 
   return (
     <aside className="w-[100%] pl-6">
-      {/* Search */}
+
       <div className="mb-8">
         <input
           type="text"
@@ -19,7 +19,7 @@ export default function BlogsFilter() {
         />
       </div>
 
-      {/* Example static widgets */}
+ 
       <div className="mb-8">
         <h3 className="text-lg font-semibold mb-4">Popular Categories</h3>
         <ul className="space-y-2 text-gray-700">
