@@ -23,7 +23,7 @@ export default function BlogDetails({ params }) {
 
   return (
     <div className="overflow-x-hidden">
-      <h1 className="text-[50px] font-bold bg-black text-white text-center p-[50px]">
+      <h1 className="text-[30px] sm:text-[50px] font-bold bg-black text-white text-center p-[30px] sm:p-[50px]">
         {t("blogs.blogsPosts")}
       </h1>
 
