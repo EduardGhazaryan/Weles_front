@@ -42,7 +42,7 @@ export default function BlogDetails({ params }) {
           <img
             src={blog.image}
             alt={blog.title}
-            className="rounded-lg mb-8 w-[100%] sm:h-[400px] h-[250px]"
+            className="rounded-lg mb-8 w-[100%]"
           />
         )}
 
