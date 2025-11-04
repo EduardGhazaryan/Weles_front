@@ -1,42 +1,37 @@
 'use client'
 import { useState } from "react";
-// import { FiFilter } from "react-icons/fi";
 import BlogsFilter from "@/components/blogs/BlogsFilter";
 import BlogsList from "@/components/blogs/BlogsList";
-import Header from "@/components/header/Header";
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
 import { useTranslation } from "react-i18next";
+
 
 export default function BlogsPage() {
   const [showFilter, setShowFilter] = useState(false);
   const {t} = useTranslation()
 
+
   return (
     <div className="overflow-x-hidden relative">
       <section>
         <h1 className="text-[50px] font-bold bg-black text-white text-center p-[50px]">
-          {t("ourBlogs")}
+          {t("blogs.ourBlogs")}
         </h1>
 
-        {/* Filter button for mobile */}
         <div className="md:hidden flex justify-end px-6 py-4">
           <button
             onClick={() => setShowFilter(true)}
             className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full text-gray-700 hover:bg-gray-100"
           >
-            {/* <FiFilter size={20} /> */}
+
             Filter
           </button>
         </div>
 
         <div className="container flex">
-          {/* Blog list */}
           <div className="md:w-[75%] w-[100%] min-h-[500px] py-[100px]">
             <BlogsList />
           </div>
 
-          {/* Sidebar filter (desktop only) */}
           <div className="md:w-[25%] md:block hidden min-h-[500px] py-[100px]">
             <BlogsFilter />
           </div>

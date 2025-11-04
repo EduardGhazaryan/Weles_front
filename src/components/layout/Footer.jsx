@@ -125,7 +125,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-[30px]  w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
-            <h4 className="font-semibold text-[22px] text-center">
+            <h4 className="font-semibold text-[22px] sm:text-left text-center">
               {t("footer.signUpForNewsLetter")}
             </h4>
             <input

@@ -49,8 +49,13 @@
   },
   "blogs": {
     "ourBlogs": "Մեր Բլոգները",
-    "blogsPosts": "Բլոգի գրառումներ",
+    "blogsPosts": "Բլոգի Մանրամասները",
     "backToBlogs": "Վերադառնալ բլոգներին"    
+  },
+  "statistics" : {
+    "projects" : "Նախագիծ",
+    "branches" : "Մասնաճյուղ",
+    "employees" : "Աշխատակից"
   },
   "buttons": {
     "seeMore": "Տեսնել ավելին",

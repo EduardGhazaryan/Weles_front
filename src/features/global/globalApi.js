@@ -1,14 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import  baseApi  from "../../baseApi/baseApi";
 
-export const getHomePageDatas = async () => {
-  try {
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 export const getHomePageDatasThunk = createAsyncThunk(
   "getHomePageDatas",
   async (_, { rejectWithValue }) => {

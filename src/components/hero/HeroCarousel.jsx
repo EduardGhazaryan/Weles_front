@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export default function HeroCarousel() {
   const { t } = useTranslation();
-  const { heroBanners } = useSelector((state) => state.global);
+  const { heroBanners,loading } = useSelector((state) => state.global);
   const [idx, setIdx] = useState(0);
   const intervalRef = useRef(null);
 
@@ -24,7 +24,7 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative xl:h-[720px] md:h-[600px] h-[400px]  ">
-      {heroBanners?.length > 0 ? (
+      {heroBanners?.length > 0 && (
         <>
           <div
             className="absolute z-10 xl:h-[720px] md:h-[600px] h-[400px] hero-wave overflow-hidden bg-green-200 bg-no-repeat bg-cover bg-center top-0 -left-10 xl:w-[104%] md:w-[106%] sm:w-[109%] w-[118%] "
@@ -85,11 +85,16 @@ export default function HeroCarousel() {
             </div>
           </div>
         </>
-      ) : (
+      )}
+      {
+        loading && (
+          (
         <div className="h-[400px] flex items-center justify-center">
           <img src="/images/spinner.gif" alt="" className="w-[70px] h-[70px]"/>
         </div>
-      )}
+      )
+        )
+      }
     </section>
   );
 }

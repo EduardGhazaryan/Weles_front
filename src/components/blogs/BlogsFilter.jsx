@@ -20,7 +20,7 @@ export default function BlogsFilter() {
       </div>
 
  
-      <div className="mb-8">
+      {/* <div className="mb-8">
         <h3 className="text-lg font-semibold mb-4">Popular Categories</h3>
         <ul className="space-y-2 text-gray-700">
           <li>• Lorem ipsum (05)</li>
@@ -28,7 +28,7 @@ export default function BlogsFilter() {
           <li>• Lorem ipsum (09)</li>
           <li>• Lorem ipsum (37)</li>
         </ul>
-      </div>
+      </div> */}
     </aside>
   );
 }

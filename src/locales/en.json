@@ -52,6 +52,11 @@
     "blogsPosts": "Blog Posts",
     "backToBlocgs": "Back To Blogs"
   },
+  "statistics" : {
+    "projects" : "Projects",
+    "branches" : "Branches",
+    "employees" : "Employees"
+  },
   "buttons": {
     "seeMore": "See More",
     "subscribeNow": "Subscribe Now",

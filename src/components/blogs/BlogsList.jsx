@@ -4,15 +4,22 @@ import BlogItem from "./BlogItem";
 import { allBlogs } from "@/utils/blogs";
 import { setCurrentPage } from "@/features/blogs/blogsSlice";
 import { useTranslation } from "react-i18next";
+import { fetchBlogsThunk } from "@/features/blogs/blogsApi";
+import { useEffect } from "react";
 
 export default function BlogsList() {
   const dispatch = useDispatch();
-  const { search, currentPage, itemsPerPage } = useSelector((state) => state.blogs);
-  const {t}= useTranslation()
+  const { search, currentPage, itemsPerPage, blogs, isLoading } = useSelector(
+    (state) => state.blogs
+  );
+  const { t } = useTranslation();
 
+  useEffect(() => {
+    dispatch(fetchBlogsThunk());
+  }, []);
 
-  const filteredBlogs = allBlogs.filter((blog) =>
-    blog.title.toLowerCase().includes(search.toLowerCase())
+  const filteredBlogs = blogs.filter((blog) =>
+    blog?.title_am.toLowerCase().includes(search.toLowerCase())
   );
 
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
@@ -34,7 +41,6 @@ export default function BlogsList() {
     scrollToTop();
   };
 
-  
   const getPageNumbers = () => {
     const pages = [];
 
@@ -46,7 +52,15 @@ export default function BlogsList() {
       } else if (currentPage >= totalPages - 2) {
         pages.push(1, "...", totalPages - 2, totalPages - 1, totalPages);
       } else {
-        pages.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages);
+        pages.push(
+          1,
+          "...",
+          currentPage - 1,
+          currentPage,
+          currentPage + 1,
+          "...",
+          totalPages
+        );
       }
     }
     return pages;
@@ -54,14 +68,16 @@ export default function BlogsList() {
 
   return (
     <div className="w-[100%] pr-6">
-
       {currentBlogs.length > 0 ? (
         currentBlogs.map((blog) => <BlogItem key={blog.id} blog={blog} />)
+      ) : isLoading ? (
+        <div className="h-[400px] flex items-center justify-center">
+          <img src="/images/spinner.gif" alt="" className="w-[70px] h-[70px]" />
+        </div>
       ) : (
         <p className="text-center text-gray-500 py-10">No results found.</p>
       )}
 
- 
       {totalPages > 1 && (
         <div className="flex justify-center items-center gap-2 mt-10">
           <button

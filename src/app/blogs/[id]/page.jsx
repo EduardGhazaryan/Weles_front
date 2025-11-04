@@ -1,22 +1,24 @@
 "use client";
-import { use } from "react";
-import Header from "@/components/header/Header";
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
+import { use, useEffect } from "react";
 import { allBlogs } from "@/utils/blogs";
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogByIdThunk } from "@/features/blogs/blogsApi";
 
 export default function BlogDetails({ params }) {
-  // ✅ Правильно: сначала “распаковываем” params
   const { id } = use(params);
-  const {t} = useTranslation()
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const { blog } = useSelector((state) => state.blog);
 
-  const blog = allBlogs.find((b) => b.id === parseInt(id));
-  console.log({ allBlogs, id });
+  useEffect(() => {
+    dispatch(fetchBlogByIdThunk({ id }));
+  }, [id]);
 
   if (!blog) {
-    return <div className="py-20 text-center text-gray-500">Blog not found</div>;
+    return (
+      <div className="py-20 text-center text-gray-500">Blog not found</div>
+    );
   }
 
   return (
@@ -26,15 +28,15 @@ export default function BlogDetails({ params }) {
       </h1>
 
       <div className="max-w-6xl mx-auto py-16 px-4 md:px-8">
-        <h1 className="text-4xl font-bold mb-6">{blog?.title}</h1>
+        <h1 className="text-4xl font-bold mb-6">{blog?.title_am}</h1>
 
-        <p className="text-gray-500 mb-4">
+        {/* <p className="text-gray-500 mb-4">
           {blog?.date} | by{" "}
           <span className="text-green-600 font-medium">{blog?.author}</span> |{" "}
           <a href="#" className="text-green-600 underline">
             {blog?.comments} comments
           </a>
-        </p>
+        </p> */}
 
         {blog?.image && (
           <img
@@ -44,7 +46,10 @@ export default function BlogDetails({ params }) {
           />
         )}
 
-        <div>{blog.description}</div>
+        <div
+          className="text-gray-600 mb-4"
+          dangerouslySetInnerHTML={{ __html: blog?.text_am }}
+        ></div>
 
         <div className="mt-10">
           <a

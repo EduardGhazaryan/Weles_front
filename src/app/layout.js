@@ -4,6 +4,7 @@ import Head from "next/head";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/header/Header";
 import Navbar from "@/components/layout/Navbar";
+import PageWrapper from "@/components/pageWrapper/PageWrapper";
 
 export const metadata = {
   title: "WELES GROUP - Swiss Vision, Global Impact",
@@ -33,7 +34,7 @@ export default function RootLayout({ children }) {
             <Header/>
             <Navbar/>
           </nav>
-          {children}
+          <PageWrapper>{children}</PageWrapper>
           <footer className="overflow-x-hidden pt-[100px]">
             <Footer />
           </footer>

@@ -17,7 +17,8 @@ const Header = () => {
   return (
     <div className="bg-black text-white  flex justify-between items-center">
       <div className="container flex justify-between items-center">
-        <div className="sm:text-[14px] text-[12px]">Top left small info</div>
+        {/* <div className="sm:text-[14px] text-[12px]">Top left small info</div> */}
+        <div className="sm:text-[14px] text-[12px]"></div>
         <div className="flex gap-4">
           {social &&
             Object.keys(social).map((key,i) => {
