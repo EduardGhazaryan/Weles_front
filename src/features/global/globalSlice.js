@@ -7,6 +7,7 @@ const initialState = {
   contentSliders : null,
   heroBanners : null,
   social : null,
+  blogs : [],
   loading : false,
   error : null
 };
@@ -27,11 +28,12 @@ const globalSlice = createSlice({
     .addCase(getHomePageDatasThunk.fulfilled, (state, action) => {
       state.loading = false;
       const data = action.payload;
-      state.about = data.about;
-      state.contact = data.contact;
-      state.contentSliders = data.contentSliders;
-      state.heroBanners = data.heroBanners;
-      state.social = data.social;
+      state.about = data?.about;
+      state.contact = data?.contact;
+      state.contentSliders = data?.contentSliders;
+      state.heroBanners = data?.heroBanners;
+      state.social = data?.social;
+      state.blogs = data?.blogs;
     })
     .addCase(getHomePageDatasThunk.rejected, (state) => {
       state.loading = false;

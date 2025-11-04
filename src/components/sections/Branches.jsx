@@ -18,32 +18,28 @@ export default function Branches() {
     { name: "Austria", lat: 37.5162, lng: 14.5501 },
     { name: "Georgia", lat: 32.3154, lng: 43.3569 },
     { name: "Armenia", lat: 30.0691, lng: 45.0382 },
-    { name: "Latvia", lat: 46.8796, lng: 24.6032 },
-    { name: "Germany", lat: 41.1657, lng: 10.4515 },
     { name: "Czech Republic", lat: 39.8175, lng: 15.473 },
   ];
 
   const countryOffsets = {
-    Switzerland: { xs: { lat: -2, lng: 4 },sm: { lat: -2, lng: 4 }, md: { lat: -7, lng: 2 }, lg: { lat: 0, lng: 0 } },
-    Austria: { xs: { lat: -2, lng: 3 }, sm: { lat: -2, lng: 3 }, md: { lat: -7, lng: 2 }, lg: { lat: 0, lng: 0 } },
-    Georgia: { xs: { lat: -3, lng: 4 },sm: { lat: -3, lng: 4 }, md: { lat: -5, lng: 2 }, lg: { lat: 0, lng: 0 } },
-    Armenia: { xs: { lat: -3, lng: 5 },sm: { lat: -3, lng: 5 }, md: { lat: -7, lng: 2 }, lg: { lat: 0, lng: 0 } },
-    Latvia: { xs: { lat: -2, lng: 5 }, sm: { lat: -2, lng: 5 }, md: { lat: -7, lng: 2 }, lg: { lat: 0, lng: 0 } },
-    Germany: { xs: { lat: -5, lng: 4 },sm: { lat: -5, lng: 4 }, md: { lat: -8, lng: 2 }, lg: { lat: 0, lng: 0 } },
-    "Czech Republic": { xs: { lat: -5, lng: 4 },sm: { lat: -5, lng: 4 }, md: { lat: -8, lng: 2 }, lg: { lat: 0, lng: 0 } },
+    Switzerland: { xs: { lat: -7, lng: 4 },sm: { lat: -10, lng: 4 }, md: { lat: -7, lng: 2 }, lg: { lat: 0, lng: 0 } },
+    Austria: { xs: { lat: -7, lng: 3 }, sm: { lat: -10, lng: 3 }, md: { lat: -7, lng: 2 }, lg: { lat: 0, lng: 0 } },
+    Georgia: { xs: { lat: -6, lng: 4 },sm: { lat: -6, lng: 4 }, md: { lat: -5, lng: 2 }, lg: { lat: 0, lng: 0 } },
+    Armenia: { xs: { lat: -7, lng: 5 },sm: { lat: -7, lng: 4 }, md: { lat: -7, lng: 2 }, lg: { lat: 0, lng: 0 } },
+    "Czech Republic": { xs: { lat: -12, lng: 4 },sm: { lat: -9, lng: 4 }, md: { lat: -8, lng: 2 }, lg: { lat: 0, lng: 0 } },
   };
 
   const getAdjustedCoords = (country) => {
     const { width } = globeSize;
     const offsets =
-      width < 640
+      width < 540
         ? countryOffsets[country.name]?.xs
         :   width < 768 ? countryOffsets[country.name]?.sm :
         width < 1024
         ? countryOffsets[country.name]?.md
         : countryOffsets[country.name]?.lg;
 
-        console.log({width,offsets});
+
         
     return {
       lat: country.lat + (offsets?.lat || 0),
@@ -59,7 +55,9 @@ export default function Branches() {
         setGlobeSize({ width: 760, height: 760 });
       } else if (window.innerWidth >= 640) {
         setGlobeSize({ width: 560, height: 560 });
-      } else {
+      } else if (window.innerWidth >= 540) {
+        setGlobeSize({ width: 460, height: 460 });
+      }else {
         setGlobeSize({ width: 360, height: 360 });
       }
     };
@@ -118,7 +116,7 @@ export default function Branches() {
   return (
     <div
       id="branches"
-      className="relative lg:h-[765px] md:h-[600px] sm:h-[530px] h-[530px] flex justify-center mx-auto text-center py-16 overflow-hidden bg-[#f7f7f7]"
+      className="relative lg:h-[765px]  md:h-[600px] sm:h-[530px] h-[500px] flex justify-center mx-auto text-center py-16 overflow-hidden bg-[#f7f7f7]"
     >
       <div className="absolute inset-0 flex flex-col items-start justify-center pointer-events-none select-none">
         <img
@@ -156,7 +154,7 @@ export default function Branches() {
             height: `${globeSize.height}px`,
           }}
         >
-          <div className="absolute bg-[#ffffff] lg:top-[456px] md:top-[291px] sm:top-[221px] top-[153px] h-[80px] shadow-[-0px_-20px_18px_#ffffff] w-[100%] z-50"></div>
+          <div className="absolute bg-[#ffffff] lg:top-[456px] md:top-[291px] sm:top-[221px] top-[183px] h-[80px] shadow-[-0px_-20px_18px_#ffffff] w-[100%] z-50"></div>
           <div className="absolute w-full h-full top-0 left-0 bg-[#ffffff29] z-50"></div>
 
           <Globe

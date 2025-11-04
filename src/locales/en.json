@@ -29,7 +29,13 @@
     "message": "Message",
     "submit": "Submit Now"
   },
-  "ourIndustries": "Our Industries",
+  "ourIndustries": {
+    "title" : "Our Industries",
+    "solarEnergy" : "SOLAR ENERGY",
+    "legalServices" : "LEGAL SERVICES",
+    "entertainment" : "ENTERTAINMENT",
+    "marketingServices" : "MARKETING SERVICES"
+  },
   "latestBlogs": "Latest Blogs",
   "ourBranches": "Our Branches",
   "getInTouch": "Get In Touch",

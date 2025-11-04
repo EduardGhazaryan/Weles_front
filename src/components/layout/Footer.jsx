@@ -38,7 +38,7 @@ export default function Footer() {
           style={{ padding: "12px 30px" }}
         >
           <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
-            <h4 className="font-semibold text-[22px]">{t("footer.navigation")}</h4>
+            {/* <h4 className="font-semibold text-[22px]">{t("footer.navigation")}</h4> */}
             <ul className="text-sm space-y-2 flex flex-col gap-[10px]">
               <li>
                 <button
@@ -124,7 +124,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[30px]  w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
+          {/* <div className="flex flex-col gap-[30px]  w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
             <h4 className="font-semibold text-[22px] sm:text-left text-center">
               {t("footer.signUpForNewsLetter")}
             </h4>
@@ -135,7 +135,7 @@ export default function Footer() {
             <button className="bg-[var(--mainGreen)] text-white px-8 py-3 rounded-3xl cursor-pointer hover:bg-green-800 transition-all">
               {t("buttons.subscribe")}
             </button>
-          </div>
+          </div> */}
 
           <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
             <h4 className="font-semibold  text-[22px]">{t("footer.followUs")}</h4>
