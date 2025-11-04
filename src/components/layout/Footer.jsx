@@ -104,7 +104,7 @@ export default function Footer() {
                     src="/icons/phone.svg"
                     alt=""
                     className="w-[20px] mb-3"
-                    style={{ filter: "var(--iconWhite)" }}
+                    style={{ filter: "var(--iconGreen)" }}
                   />
                   <span>{contact?.phone}</span>
                 </div>
@@ -116,7 +116,7 @@ export default function Footer() {
                     src="/icons/mail.svg"
                     alt=""
                     className="w-[20px] mb-3"
-                    style={{ filter: "var(--iconWhite)" }}
+                    style={{ filter: "var(--iconGreen)" }}
                   />
                   <span>{contact?.email}</span>
                 </div>
@@ -158,7 +158,7 @@ export default function Footer() {
                         src={meta.src}
                         alt={meta.title}
                         className="w-6 h-6"
-                        style={{ filter: "var(--iconWhite)" }}
+                        style={{ filter: "var(--iconGreen)" }}
                       />
                       <span className="text-white">{meta.title}</span>
                     </Link>

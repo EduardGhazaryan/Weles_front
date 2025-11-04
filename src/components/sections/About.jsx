@@ -15,7 +15,7 @@ export default function About() {
       <div className="lg:w-1/3 md:w-[50%] w-full">
         <div className="rounded-full overflow-hidden xl:w-100 xl:h-100 lg:w-80 lg:h-80 w-60 h-60 mx-auto  shadow-lg">
           <img
-            src="/images/office.jpg"
+            src="/images/w22.png"
             alt="office"
             className="w-full h-full object-cover"
           />

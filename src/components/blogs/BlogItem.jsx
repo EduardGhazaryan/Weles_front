@@ -10,7 +10,7 @@ export default function BlogItem({ blog }) {
         <img
           src={blog?.image}
           alt={blog?.title_am}
-          className="w-full rounded-lg mb-4 md:h-[400px] h-[300px]"
+          className="w-full rounded-lg mb-4"
         />
       )}
 

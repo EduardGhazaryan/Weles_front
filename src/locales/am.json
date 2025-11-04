@@ -36,7 +36,7 @@
     "entertainment" : "ԱՆՇԱՐԺ ԳՈՒՅՔ",
     "marketingServices" : "ՄԱՐՔԵԹԻՆԳԱՅԻՆ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ"
   },
-  "latestBlogs": "Վերջին Բլոգներ",
+  "latestBlogs": "Վերջին Նորությունները",
   "ourBranches": "Մեր Մասնաճյուղերը",
   "getInTouch": "Կապ Մեզ Հետ",
   "countries": {
@@ -54,7 +54,7 @@
     "signUpForNewsLetter": "Բաժանորդագրվեք Նորություններին"
   },
   "blogs": {
-    "ourBlogs": "Մեր Բլոգները",
+    "ourBlogs": "Մեր Նորությունները",
     "blogsPosts": "Բլոգի Մանրամասները",
     "backToBlogs": "Վերադառնալ բլոգներին"    
   },
