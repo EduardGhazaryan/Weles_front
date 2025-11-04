@@ -63,12 +63,12 @@ export function CarouselSlide() {
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3" >
               <div className="cursor-pointer" onClick={() => router.push(`/blogs/${item?.id}`)}>
                 <Card className="p-0 border-none shadow-[0px_0px_12px_#d1d1d1]">
-                  <CardContent className="flex p-0 lg:h-[400px] min-h-[400px] flex-col border-none overflow-hidden relative">
+                  <CardContent className="flex p-0 lg:h-[460px] min-h-[460px] flex-col border-none overflow-hidden relative">
                     <div className="absolute top-4 left-4 bg-[var(--mainGreen)] min-w-[100px] rounded text-white px-2">
                     {formatBlogDate(item?.created_at, i18n.language)}
                     </div>
                     <img
-                      src={item?.image}
+                      src={item?.small_image}
                       alt=""
                       className="w-full h-[200px] rounded-2xl object-cover"
                     />
