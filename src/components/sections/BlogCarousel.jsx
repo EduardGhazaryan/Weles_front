@@ -12,7 +12,7 @@ export default function BlogCarousel() {
     <div id="blogs" className="container mx-auto text-center ">
       <h3 className="sm:text-[50px] text-[30px] font-bold mb-8">{t("latestBlogs")}</h3>
 
-      <div className="w-full min-h-[300px] px-[40px] sm:px-[50px]">
+      <div className="w-full min-h-[300px] px-[30px] sm:px-[50px]">
         <CarouselSlide />
       </div>
 
