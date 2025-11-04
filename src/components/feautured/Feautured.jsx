@@ -62,7 +62,7 @@ export default function Feautured() {
             </div> */}
             <img src={contentSliders[idx]?.bg_image || ""} alt="" className="w-[100vw] h-full"/>
 
-            <div className="flex gap-2 mt-6 absolute bottom-4 left-1/2 -translate-x-1/2">
+            <div className="hidden sm:flex gap-2 mt-6 absolute bottom-4 left-1/2 -translate-x-1/2">
               <div className="flex gap-3 mt-6">
                 {items.map((it, i) => (
                   <div

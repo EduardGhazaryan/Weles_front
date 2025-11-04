@@ -53,7 +53,7 @@ const Statistics = () => {
 
   return (
     <div className="container" id="statistics" ref={ref}>
-      <div className="py-[100px] flex gap-[30px] justify-between lg:flex-nowrap flex-wrap">
+        <div className="py-[50px] sm:py-[100px] flex gap-[30px] justify-between lg:flex-nowrap flex-wrap">
         {counters.map((item, i) => (
           <div
             key={i}
