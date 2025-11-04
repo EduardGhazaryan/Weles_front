@@ -38,7 +38,7 @@ export default function Feautured() {
 
   return (
     <section
-      className="  overflow-hidden bg-green-700 sm:min-h-[300px] min-h-[250px]"
+      className="  overflow-hidden bg-green-700 sm:min-h-[300px] min-h-[170px]"
       id="feautured"
     >
       {contentSliders?.length > 0 ? (
@@ -46,7 +46,7 @@ export default function Feautured() {
           // style={{
           //   backgroundImage: `url(${contentSliders[idx]?.bg_image || ""})`,
           // }}
-          className="relative md:h-[420px] sm:h-[300px] h-[250px] bg-no-repeat bg-cover bg-center"
+          className="relative md:h-[420px] sm:h-[300px] h-[170px] bg-no-repeat bg-cover bg-center"
         >
 
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white ">
