@@ -30,15 +30,15 @@
     "submit": "Ուղարկել"
   },
   "ourIndustries": {
-    "title" : "Մեր Գործունեության Ոլորտները",
-    "solarEnergy" : "ԱՐԵՎԱՅԻՆ ԷՆԵՐԳԵՏԻԿԱ",
-    "legalServices" : "ԻՐԱՎԱԲԱՆԱԿԱՆ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ",
-    "entertainment" : "ԱՆՇԱՐԺ ԳՈՒՅՔ",
-    "marketingServices" : "ՄԱՐՔԵԹԻՆԳԱՅԻՆ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ"
+    "title": "Մեր գործունեության ոլորտները",
+    "solarEnergy": "Արևային էներգետիկա",
+    "legalServices": "Իրավաբանական ծառայություններ",
+    "entertainment": "Անշարժ գույք",
+    "marketingServices": "Մարկեթինգային ծառայություններ"
   },
-  "latestBlogs": "Վերջին Նորությունները",
-  "ourBranches": "Մեր Մասնաճյուղերը",
-  "getInTouch": "Կապ Մեզ Հետ",
+  "latestBlogs": "Վերջին նորությունները",
+  "ourBranches": "Մեր մասնաճյուղերը",
+  "getInTouch": "Կապ մեզ հետ",
   "countries": {
     "Switzerland": "Շվեյցարիա",
     "Austria": "Ավստրիա",
@@ -50,12 +50,12 @@
   },
   "footer": {
     "navigation": "Նավիգացիա",
-    "followUs": "հետևեք Մեզ",
-    "signUpForNewsLetter": "Բաժանորդագրվեք Նորություններին"
+    "followUs": "Հետևեք մեզ",
+    "signUpForNewsLetter": "Բաժանորդագրվեք նորություններին"
   },
   "blogs": {
-    "ourBlogs": "Վերջին Նորությունները",
-    "blogsPosts": "Բլոգի Մանրամասները",
+    "ourBlogs": "Վերջին նորությունները",
+    "blogsPosts": "Բլոգի մանրամասները",
     "backToBlogs": "Վերադառնալ բլոգներին"    
   },
   "statistics" : {
