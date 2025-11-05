@@ -37,7 +37,7 @@ export default function Footer() {
           className="container mx-auto flex justify-between flex-wrap gap-x-[10px] gap-y-[30px] "
           style={{ padding: "12px 30px" }}
         >
-          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
+          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[30%] sm:items-start items-center">
             {/* <h4 className="font-semibold text-[22px]">{t("footer.navigation")}</h4> */}
             <ul className="text-sm space-y-2 flex flex-col gap-[10px]">
               <li>
@@ -83,7 +83,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
+          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[30%]  items-center">
             <h4 className="font-semibold text-[22px]">{t("getInTouch")}</h4>
             <div className="flex flex-col gap-[10px]">
               {contact?.address && (
@@ -137,7 +137,7 @@ export default function Footer() {
             </button>
           </div> */}
 
-          <div className="flex flex-col gap-[30px] w-[100%] sm:w-[48%] lg:w-[23%] sm:items-start items-center">
+          <div className="flex flex-col gap-[30px] w-[100%]  sm:w-[30%] sm:items-end items-center">
             <h4 className="font-semibold  text-[22px]">{t("footer.followUs")}</h4>
             <div className="flex gap-4 flex-col">
               {social &&

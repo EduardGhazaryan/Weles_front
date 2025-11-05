@@ -22,7 +22,7 @@ export default function BlogItem({ blog }) {
         </a>
       </p> */}
 
-      <h2 className="text-2xl font-bold mb-3">{blog?.title_am}</h2>
+      <h2 className="sm:text-2xl text-[18px] font-bold mb-3">{blog?.title_am}</h2>
 
       <p
         className="text-gray-600 mb-4 line-clamp-7"

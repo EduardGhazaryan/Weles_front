@@ -10,7 +10,7 @@ import Feautured from "@/components/feautured/Feautured";
 export default function Home() {
 
   return (
-    <main>
+    <main className="flex flex-col gap-[100px]">
       <header className="overflow-x-hidden">
         <HeroCarousel />
       </header>

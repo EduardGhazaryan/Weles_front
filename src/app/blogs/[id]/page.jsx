@@ -23,12 +23,12 @@ export default function BlogDetails({ params }) {
 
   return (
     <div className="overflow-x-hidden">
-      <h1 className="text-[30px] sm:text-[50px] font-bold bg-black text-white text-center p-[30px] sm:p-[50px]">
+      <h1 className="text-[20px] sm:text-[50px] font-bold bg-black text-white text-center p-[30px] sm:p-[50px]">
         {t("blogs.blogsPosts")}
       </h1>
 
       <div className="max-w-6xl mx-auto py-16 px-4 md:px-8">
-        <h1 className="text-4xl font-bold mb-6">{blog?.title_am}</h1>
+        <h1 className="sm:text-4xl text-[18px] font-bold mb-6">{blog?.title_am}</h1>
 
         {/* <p className="text-gray-500 mb-4">
           {blog?.date} | by{" "}

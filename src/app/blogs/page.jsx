@@ -13,7 +13,7 @@ export default function BlogsPage() {
   return (
     <div className="overflow-x-hidden relative">
       <section>
-          <h1 className="text-[30px] sm:text-[50px] font-bold bg-black text-white text-center p-[30px] sm:p-[50px]">
+          <h1 className="text-[20px] sm:text-[50px] font-bold bg-black text-white text-center p-[30px] sm:p-[50px]">
               {t("blogs.ourBlogs")}
           </h1>
 

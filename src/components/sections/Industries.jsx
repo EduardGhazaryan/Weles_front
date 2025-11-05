@@ -39,7 +39,7 @@ export default function Industries() {
                 <h3 className="font-bold sm:text-[50px] text-[25px] mb-8 text-black">
                     {t("ourIndustries.title")}
                 </h3>
-                <div className="flex flex-wrap lg:gap-x-10 gap-y-[100px] gap-x-0 justify-center md:justify-between px-4">
+                <div className="flex flex-wrap lg:gap-x-10 md:gap-y-[100px] gap-y-[50px] gap-x-0 justify-center md:justify-between px-4">
                     {items.map((it, i) => (
                         <div
                             key={i}
