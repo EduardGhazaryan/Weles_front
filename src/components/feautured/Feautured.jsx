@@ -46,7 +46,7 @@ export default function Feautured() {
           // style={{
           //   backgroundImage: `url(${contentSliders[idx]?.bg_image || ""})`,
           // }}
-          className="relative md:h-[420px] bg-no-repeat bg-cover bg-center"
+          className="relative bg-no-repeat bg-cover bg-center"
         >
 
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white ">
