@@ -27,7 +27,12 @@
     "email": "Email Address",
     "phone": "Phone",
     "message": "Message",
-    "submit": "Submit Now"
+    "submit": "Submit Now",
+    "fillAllFields" : "Please fill in all fields",
+    "errors" : {
+      "required" : "Required field",
+      "email" : "Invalid email address"
+    }
   },
   "ourIndustries": {
     "title" : "Our Industries",

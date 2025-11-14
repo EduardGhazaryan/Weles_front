@@ -12,3 +12,14 @@ export const getHomePageDatasThunk = createAsyncThunk(
     }
   }
 );
+export const sendFormDataThunk = createAsyncThunk(
+  "sendFormData",
+  async ({data}, { rejectWithValue }) => {
+    try {
+      const response = await baseApi.post("/contactEmail", data);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
