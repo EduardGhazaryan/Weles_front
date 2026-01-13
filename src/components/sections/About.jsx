@@ -1,11 +1,12 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useLocalized } from "@/utils/useLocalized";
 
 export default function About() {
   const { t } = useTranslation();
-  // const about = t("about", { returnObjects: true });
   const { about } = useSelector((state) => state.global);
+  const { get } = useLocalized();
 
   return (
     <div
@@ -22,10 +23,10 @@ export default function About() {
         </div>
       </div>
       <div className="lg:w-2/3 md:w-[100%] w-[100%] p-5">
-        <h2 className="text-3xl font-semibold">{about?.title_am}</h2>
+        <h2 className="text-3xl font-semibold">{get(about, "title")}</h2>
         <div
           className="mt-4 text-gray-600 space-y-3"
-          dangerouslySetInnerHTML={{ __html: about?.text_am }}
+          dangerouslySetInnerHTML={{ __html: get(about, "text") }}
         ></div>
       </div>
     </div>

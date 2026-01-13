@@ -11,6 +11,7 @@ import {
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { useLocalized } from "@/utils/useLocalized";
 
  function formatBlogDate(dateString, locale = "en") {
   const date = new Date(dateString);
@@ -48,7 +49,8 @@ import { useTranslation } from "react-i18next";
 export function CarouselSlide() {
   const { blogs } = useSelector((state) => state.global);
   const router = useRouter();
-  const {i18n} = useTranslation()
+  const {i18n} = useTranslation();
+  const { get } = useLocalized();
 
   return (
     <Carousel
@@ -74,11 +76,11 @@ export function CarouselSlide() {
                     />
                     <div className="flex flex-col gap-2 p-4 overflow-hidden justify-between min-h-[200px]">
                       <span className="font-semibold text-[20px] line-clamp-2">
-                        {item.title_am}
+                        {get(item, "title")}
                       </span>
                       <span
                         className="text-left text-sm text-gray-600 line-clamp-5"
-                        dangerouslySetInnerHTML={{ __html: item?.text_am }}
+                        dangerouslySetInnerHTML={{ __html: get(item, "text") }}
                       />
                     </div>
                   </CardContent>

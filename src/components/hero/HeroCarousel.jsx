@@ -1,14 +1,15 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useLocalized } from "@/utils/useLocalized";
 
 export default function HeroCarousel() {
   const { t } = useTranslation();
-  const { heroBanners,loading } = useSelector((state) => state.global);
+  const { heroBanners, loading } = useSelector((state) => state.global);
+  const { get } = useLocalized();
   const [idx, setIdx] = useState(0);
   const intervalRef = useRef(null);
-
 
   const handleClick = (type) => {
     clearInterval(intervalRef.current);
@@ -42,15 +43,6 @@ export default function HeroCarousel() {
                 />
               </button>
 
-              {/* <div className="md:max-w-[450px] max-w-[200px]">
-                <h1 className="xl:text-6xl md:text-4xl text-2xl font-bold tracking-wider drop-shadow-lg">
-                  {heroBanners[idx]?.title_am}
-                </h1>
-                <p className="mt-4 md:text-xl text-md">
-                  {heroBanners[idx]?.text_am}
-                </p>
-              </div> */}
-
               <button onClick={() => handleClick("next")}>
                 <img
                   src="icons/right_circle.svg"
@@ -65,16 +57,12 @@ export default function HeroCarousel() {
               <div className="flex gap-3 mt-6">
                 {heroBanners?.map((it, i) => (
                   <div
-                    key={it.title_am}
+                    key={it.id || i}
                     onClick={() => {
                       clearInterval(intervalRef.current);
                       setIdx(i);
-                      startAutoSlide();
                     }}
-                    className={`
-        w-[15px] h-[15px] rounded-full flex items-center justify-center cursor-pointer transition-all
-        ${idx === i ? "border-2 border-white" : "bg-gray-400"}
-      `}
+                    className={`w-[15px] h-[15px] rounded-full flex items-center justify-center cursor-pointer transition-all ${idx === i ? "border-2 border-white" : "bg-gray-400"}`}
                   >
                     {idx === i && (
                       <div className="w-[7px] h-[7px] rounded-full bg-green-500"></div>
@@ -86,15 +74,11 @@ export default function HeroCarousel() {
           </div>
         </>
       )}
-      {
-        loading && (
-          (
+      {loading && (
         <div className="h-[400px] flex items-center justify-center">
-          <img src="/images/spinner.gif" alt="" className="w-[70px] h-[70px]"/>
+          <img src="/images/spinner.gif" alt="" className="w-[70px] h-[70px]" />
         </div>
-      )
-        )
-      }
+      )}
     </section>
   );
 }

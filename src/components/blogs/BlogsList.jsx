@@ -4,6 +4,7 @@ import BlogItem from "./BlogItem";
 import { allBlogs } from "@/utils/blogs";
 import { setCurrentPage } from "@/features/blogs/blogsSlice";
 import { useTranslation } from "react-i18next";
+import { useLocalized } from "@/utils/useLocalized";
 import { fetchBlogsThunk } from "@/features/blogs/blogsApi";
 import { useEffect } from "react";
 
@@ -13,13 +14,14 @@ export default function BlogsList() {
     (state) => state.blogs
   );
   const { t } = useTranslation();
+  const { get } = useLocalized();
 
   useEffect(() => {
     dispatch(fetchBlogsThunk());
   }, []);
 
   const filteredBlogs = blogs.filter((blog) =>
-    blog?.title_am.toLowerCase().includes(search.toLowerCase())
+    get(blog, "title").toLowerCase().includes(search.toLowerCase())
   );
 
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);

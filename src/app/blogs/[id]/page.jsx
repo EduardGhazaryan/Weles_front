@@ -2,12 +2,14 @@
 import { use, useEffect } from "react";
 import { allBlogs } from "@/utils/blogs";
 import { useTranslation } from "react-i18next";
+import { useLocalized } from "@/utils/useLocalized";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogByIdThunk } from "@/features/blogs/blogsApi";
 
 export default function BlogDetails({ params }) {
   const { id } = use(params);
   const { t } = useTranslation();
+  const { get } = useLocalized();
   const dispatch = useDispatch();
   const { blog } = useSelector((state) => state.blog);
 
@@ -28,7 +30,7 @@ export default function BlogDetails({ params }) {
       </h1>
 
       <div className="max-w-6xl mx-auto py-16 px-4 md:px-8">
-        <h1 className="sm:text-4xl text-[18px] font-bold mb-6">{blog?.title_am}</h1>
+        <h1 className="sm:text-4xl text-[18px] font-bold mb-6">{get(blog, "title")}</h1>
 
         {/* <p className="text-gray-500 mb-4">
           {blog?.date} | by{" "}
@@ -48,7 +50,7 @@ export default function BlogDetails({ params }) {
 
         <div
           className="text-gray-600 mb-4"
-          dangerouslySetInnerHTML={{ __html: blog?.text_am }}
+          dangerouslySetInnerHTML={{ __html: get(blog, "text") }}
         ></div>
 
         <div className="mt-10">
